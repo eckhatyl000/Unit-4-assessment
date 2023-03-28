@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Back End Assessment</title>
+</head>
+
+<body class="container">
+    <button id="complimentButton">Get a compliment</button>
+    <button id="fortune-button">Get Fortune</button>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+<button id="get-random-name">Get Random Name</button>
+
+<script>
+    const button = document.getElementById("get-random-name");
+    button.addEventListener("click", () => {
+        fetch('/random-name')
+            .then(response => response.text())
+            .then(name => alert(`Random Name: ${name}`))
+            .catch(error => console.error(error));
+    });
+</script>
+<button id="color-btn">Get Random Color</button>
+<form id="delete-book-form">
+    <label for="book">Book to delete:</label>
+    <input type="text" id="book" name="book">
+    <button type="submit">Delete book</button>
+</form>
+
+
+</html>
